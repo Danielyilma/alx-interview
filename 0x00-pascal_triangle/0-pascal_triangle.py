@@ -13,6 +13,7 @@ def factorial(n):
 
     return result
 
+
 def pascal_triangle(n):
     """creates a list of list that represent pascal triangle"""
     triangle = []

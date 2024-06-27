@@ -1,5 +1,10 @@
+"""
+implementing pascal triangle
+"""
+
 
 def pascal_triangle(n):
+    """creates a list of list that represent pascal triangle"""
     triangle = []
 
     if n <= 0:
@@ -16,9 +21,10 @@ def pascal_triangle(n):
 
 
 def factorial(n):
+    """accepts +ve number and finds the factorial of that number"""
     result = 1
 
     for i in range(1, n + 1):
         result *= i
-    
+
     return result

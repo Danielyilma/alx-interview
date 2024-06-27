@@ -1,7 +1,17 @@
+#!/usr/bin/python3
 """
 implementing pascal triangle
 """
 
+
+def factorial(n):
+    """accepts +ve number and finds the factorial of that number"""
+    result = 1
+
+    for i in range(1, n + 1):
+        result *= i
+
+    return result
 
 def pascal_triangle(n):
     """creates a list of list that represent pascal triangle"""
@@ -18,13 +28,3 @@ def pascal_triangle(n):
         triangle.append(temp)
 
     return triangle
-
-
-def factorial(n):
-    """accepts +ve number and finds the factorial of that number"""
-    result = 1
-
-    for i in range(1, n + 1):
-        result *= i
-
-    return result

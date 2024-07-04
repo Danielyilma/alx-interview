@@ -1,6 +1,14 @@
 #!/usr/bin/python3
+'''implementation for the lockbox question'''
+
 
 def canUnlockAll(boxes):
+    '''
+    It addes the first box keys to a set(keys) and for each keys, it checkes
+    there is a box that can open it and  then it addes the keys in the opened
+    box to the set(keys) and repeates the process until all boxes are opened
+    or there is no key left
+    '''
     keys = set(boxes[0])
     checked_box = []
     box_len = len(boxes) - 1
@@ -16,8 +24,5 @@ def canUnlockAll(boxes):
             checked_box.append(key)
             box_len -= 1
             keys.remove(key)
-    
-    return box_len == 0
-        
 
-# print(canUnlockAll([[1], [2]]))
+    return box_len == 0

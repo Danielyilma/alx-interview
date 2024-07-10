@@ -4,7 +4,7 @@
 
 def minOperations(n):
     '''returns minimum operation needed to copy a character n times'''
-    if n == 0 or n == 1:
+    if n <= 1:
         return 0
 
     oper = 2

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 '''implement minimum operation problem'''
 
 def minOperations(n):

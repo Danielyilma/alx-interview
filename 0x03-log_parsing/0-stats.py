@@ -39,8 +39,6 @@ def main():
 
             if count % 10 == 0:
                 print_list(result, sizes)
-                result = {}
-                sizes = []
 
         print_list(result, sizes)
     except KeyboardInterrupt:

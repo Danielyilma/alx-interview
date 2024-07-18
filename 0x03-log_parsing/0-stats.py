@@ -21,10 +21,12 @@ def print_list(logs: List[Tuple[int, int]], filesizes: int) -> None:
 def main():
     '''start of execution where the log data will be parsed'''
 
-    format_pattern = r'(\d{1,3}\.?){3}\d{1,3} - \[\d{4,}(-\d{1,2}){2} \
-(\d{1,2}:){2}\d{1,2}.\d{1,8}\] "GET /projects/260 HTTP/1.1" (\d{3}) (\d{1,4})'
+    format_pattern = r'(\d{1,3}\.?){3}\d{1,3} - \[\d{4,}(-\d{1,2}){2} '\
+        r'(\d{1,2}:){2}\d{1,2}.\d{1,8}\] "GET /projects/260 HTTP/1.1" (\d{3}'\
+        r') (\d{1,4})'
     result = {}
     sizes = []
+
     try:
         count = 0
         for line in sys.stdin:

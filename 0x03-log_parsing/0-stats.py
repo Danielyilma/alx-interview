@@ -11,8 +11,6 @@ def print_list(logs: Dict[int, int], filesizes: List[int]) -> None:
         print the value of a list in this format
         <status code>: <number>
     '''
-    if logs == {} or filesizes == []:
-        return
     totalsize = sum(filesizes)
     sorted(logs)
     print(f'File size: {totalsize}')

@@ -3,14 +3,16 @@
 import re
 import signal
 import sys
-from typing import List, Tuple
+from typing import Dict, List
 
 
-def print_list(logs: List[Tuple[int, int]], filesizes: List[int]) -> None:
+def print_list(logs: Dict[int, int], filesizes: List[int]) -> None:
     '''
         print the value of a list in this format
         <status code>: <number>
     '''
+    if logs == {} or filesizes == []:
+        return
     totalsize = sum(filesizes)
     sorted(logs)
     print(f'File size: {totalsize}')
@@ -24,8 +26,8 @@ def main():
     format_pattern = r'(\d{1,3}\.?){3}\d{1,3} - \[\d{4,}(-\d{1,2}){2} '\
         r'(\d{1,2}:){2}\d{1,2}.\d{1,8}\] "GET /projects/260 HTTP/1.1" (\d{3}'\
         r') (\d{1,4})'
-    result = {}
     sizes = []
+    result = {}
 
     try:
         count = 0
@@ -39,7 +41,6 @@ def main():
 
             if count % 10 == 0:
                 print_list(result, sizes)
-                result = {}
 
         print_list(result, sizes)
     except KeyboardInterrupt:

@@ -6,7 +6,7 @@ import sys
 from typing import List, Tuple
 
 
-def print_list(logs: List[Tuple[int, int]], filesizes: int) -> None:
+def print_list(logs: List[Tuple[int, int]], filesizes: List[int]) -> None:
     '''
         print the value of a list in this format
         <status code>: <number>
@@ -39,6 +39,8 @@ def main():
 
             if count % 10 == 0:
                 print_list(result, sizes)
+                result = {}
+                sizes = []
 
         print_list(result, sizes)
     except KeyboardInterrupt:

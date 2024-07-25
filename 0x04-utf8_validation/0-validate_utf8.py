@@ -8,7 +8,7 @@ def validUTF8(data):
         return False
 
     for num in data:
-        if (num >> 7) != 0 or type(num) != int:
+        if (num >> 8) != 0 or type(num) != int:
             return False
 
     return True

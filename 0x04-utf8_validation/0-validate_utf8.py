@@ -4,11 +4,27 @@
 
 def validUTF8(data):
     '''validating utf-8 encoding'''
-    if data is None:
-        return False
+    no_bytes = 0
 
-    for num in data:
-        if (num >> 7) != 0 or type(num) != int:
-            return False
+    for i in data:
+        mask_byte = 1 << 7
+
+        if no_bytes == 0:
+            while i & mask_byte:
+                no_bytes += 1
+                mask_byte = mask_byte >> 1
+
+            if no_bytes == 0:
+                continue
+
+            no_bytes -= 1
+
+        else:
+            if not ((i & (1 << 7)) and not (i & (1 << 6))):
+                return False
+
+            no_bytes -= 1
+    if no_bytes != 0:
+        return False
 
     return True

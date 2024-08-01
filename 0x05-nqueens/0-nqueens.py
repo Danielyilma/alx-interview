@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''nqueens backtracking problem'''
 import sys
 
 

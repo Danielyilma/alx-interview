@@ -16,7 +16,5 @@ def makeChange(coins, total):
         if total >= coin:
             numbere_coins += total // coin
             total %= coin
-        else:
-            break
 
     return numbere_coins if total == 0 else -1

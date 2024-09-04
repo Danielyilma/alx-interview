@@ -49,6 +49,9 @@ def isPrime(num):
 
 def isWinner(x, nums):
     '''the game function that decides who wins the game'''
+
+    if x <= 0:
+        return None
     benWin = 0
     mariaWin = 0
     for num in nums:

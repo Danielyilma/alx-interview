@@ -29,11 +29,14 @@ def primeCount(n):
 @memoize
 def isPrime(num):
     '''check if a number is prime or not'''
-    if num <= 1 or num % 2 == 0:
+    if num <= 1:
         return False
 
     if num == 2:
         return True
+    
+    if num % 2 == 0:
+        return False
 
     i = 3
     while i * i <= num:
